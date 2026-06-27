@@ -1,9 +1,8 @@
-import type { Category } from '../../types/index';
-
-interface TagsSelectorProps {
+    interface TagsSelectorProps {
   selected: Category;
   onChange: (category: Category) => void;
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                        import type { Category } from '../../types/index';
 
 const categories: Category[] = ['Urgent', 'Important', 'Work', 'Personal', 'Other'];
 

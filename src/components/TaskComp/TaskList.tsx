@@ -1,5 +1,4 @@
-import type { ITask } from '../../types/index';
-import TaskCard from './TaskCard';
+  import TaskCard from './TaskCard';                                                                                                                                                                                                                                                                                                                                                   import type { ITask } from '../../types/index';
 
 interface TaskListProps {
   tasks: ITask[];

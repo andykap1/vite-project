@@ -1,5 +1,5 @@
-import deleteIcon from '../../assets/delete.png';
-import editIcon from '../../assets/pencil.png';
+                                                                                                                                                                                                                                                              import deleteIcon from '../../assets/Vector.png';
+import editIcon from '../../assets/Vector3.png';
 
 interface ActionButtonProps {
   label: string;

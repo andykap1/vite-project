@@ -1,11 +1,11 @@
-import { useState } from 'react';
+                                                                                                                                                                                                                                                 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '../universal/Navbar';
-import FormInput from '../components/TaskComp/InputForm';
 import TagsSelector from '../components/TaskComp/TaskSelect';
 import BackToTop from '../components/TaskComp/BackToTop';
 import useTasks from '../hooks/UseTask';
-import type { ITask, Category } from '../types/index';
+import FormInput from '../components/TaskComp/InputForm';
+import type { ITask, Category } from '../types/Index';
 
 const EditPage = () => {
   const navigate = useNavigate();

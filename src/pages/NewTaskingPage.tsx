@@ -1,4 +1,4 @@
-import { useState } from 'react';
+                                                                                                                                                                                                                                          import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../universal/Navbar';
 import FormInput from '../components/TaskComp/InputForm';
@@ -8,7 +8,7 @@ import useTasks from '../hooks/UseTask';
 import { getTodayString } from '../utils/helpers';
 import type { Category } from '../types/index';
 
-const NewTaskingPage = () => {
+const NewTaskPage = () => {
   const navigate = useNavigate();
   const { createTask, loading, error } = useTasks();
 
@@ -81,4 +81,4 @@ const NewTaskingPage = () => {
   );
 };
 
-export default NewTaskingPage;
+export default NewTaskPage;

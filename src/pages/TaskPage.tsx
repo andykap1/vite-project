@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+                                                                                                                                                                                                                                                  import { useNavigate } from 'react-router-dom';
 import Navbar from '../universal/Navbar';
 import TaskHeader from '../components/TaskComp/TaskHeader';
 import TaskList from '../components/TaskComp/TaskList';
@@ -7,7 +7,7 @@ import useTasks from '../hooks/UseTask';
 import type { ITask } from '../types/index';
 
 
-const TasksPage = () => {
+const TaskPage = () => {
   const navigate = useNavigate();
   const { tasks, loading, error, deleteTask } = useTasks();
 
@@ -51,4 +51,4 @@ const TasksPage = () => {
   );
 };
 
-export default TasksPage;
+export default TaskPage;

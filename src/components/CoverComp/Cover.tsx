@@ -1,5 +1,4 @@
-import { useNavigate } from 'react-router-dom';
-import coverImg from '../../assets/image.png';
+  import coverImg from '../../assets/image.png';                                                                                                                                                                                                                                                                              import { useNavigate } from 'react-router-dom';
 
 const Cover = () => {
   const navigate = useNavigate();

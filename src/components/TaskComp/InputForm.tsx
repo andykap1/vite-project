@@ -1,4 +1,4 @@
-interface FormInputProps {
+                                                                                                                                                                                                                                                                                              interface FormInputProps {
   label: string;
   value: string;
   onChange: (value: string) => void;
@@ -6,7 +6,7 @@ interface FormInputProps {
   type?: 'text' | 'date' | 'textarea';
 }
 
-const FormInput = ({
+const inputForm = ({
   label,
   value,
   onChange,
@@ -37,4 +37,4 @@ const FormInput = ({
   );
 };
 
-export default FormInput;
+export default inputForm;
