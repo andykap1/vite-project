@@ -1,18 +1,17 @@
-import mongoose, { Document, Schema, Types } from 'mongoose';
-
-
-
-export interface ITask extends Document {
-  _id: Types.ObjectId;           
+ export interface ITask extends Document {
+  _id: Types.ObjectId;
   title: string;
   description: string;
   dueDate: Date;
   category: 'Urgent' | 'Important' | 'Work' | 'Personal' | 'Other';
   completed: boolean;
-
+  user: Types.ObjectId;
+  deleted: boolean;
+  deletedAt: Date | null;
   createdAt: Date;
   updatedAt: Date;
-}
+}                                                                                                                                                                                                                                                                          import mongoose, { Document, Schema, Types } from 'mongoose';
+
 
 
 const taskSchema = new Schema<ITask>(
@@ -24,7 +23,6 @@ const taskSchema = new Schema<ITask>(
       minlength: [3, 'Title must be at least 3 characters long'],
       maxlength: [100, 'Title cannot exceed 100 characters'],
     },
-
     description: {
       type: String,
       required: [true, 'Description is required'],
@@ -32,7 +30,6 @@ const taskSchema = new Schema<ITask>(
       minlength: [10, 'Description must be at least 10 characters long'],
       maxlength: [500, 'Description cannot exceed 500 characters'],
     },
-
     dueDate: {
       type: Date,
       required: [true, 'Due date is required'],
@@ -45,7 +42,6 @@ const taskSchema = new Schema<ITask>(
         message: 'Due date cannot be in the past',
       },
     },
-
     category: {
       type: String,
       enum: {
@@ -55,23 +51,32 @@ const taskSchema = new Schema<ITask>(
       default: 'Personal',
       required: true,
     },
-
     completed: {
       type: Boolean,
       default: false,
     },
-
-   
-
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: [true, 'User is required'],
+    },
+    deleted: {
+      type: Boolean,
+      default: false,
+    },
+    deletedAt: {
+      type: Date,
+      default: null,
+    },
   },
   {
-    timestamps: true, 
+    timestamps: true,
   }
 );
 
-
-taskSchema.index({ user: 1, completed: 1, category: 1 }); 
-taskSchema.index({ dueDate: 1 });                         
-
+taskSchema.index({ user: 1, completed: 1, category: 1 });
+taskSchema.index({ dueDate: 1 });
+taskSchema.index({ deleted: 1 });
 
 export const Task = mongoose.model<ITask>('Task', taskSchema);
+export default Task;
